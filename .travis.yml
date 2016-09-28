@@ -1,7 +1,7 @@
-## Trial script
+sudo: required
 language: node_js
 node_js:
-    - "4.1.2"
+ - "4.2"
 script: npm test
 before_install:
     - export DISPLAY=:99.0

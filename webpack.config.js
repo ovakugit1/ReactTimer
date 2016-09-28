@@ -45,5 +45,9 @@ module.exports = {
       }
     ]
   },
-  devtool: 'cheap-module-eval-source-map'
+  devtool: 'cheap-module-eval-source-map',
+  externals: {
+      'react/lib/ExecutionEnvironment': true,
+      'react/lib/ReactContext': true
+    }
 };
