@@ -1,6 +1,6 @@
 language: node_js
 node_js:
- - "0.10"
+ - "4.1.2"
 script: npm test
 before_install:
     - export DISPLAY=:99.0
@@ -8,6 +8,7 @@ before_install:
 before_script:
     - npm install
     - export NODE_PATH="/home/travis/build/ovakugit1/ReactTimer/node_modules"
+    - mv ./node_modules/jquery ./node_modules/jQuery
 cache:
   directories:
     - node_modules
