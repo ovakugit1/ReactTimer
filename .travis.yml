@@ -9,8 +9,6 @@ before_install:
 before_script:
     - npm install
     - sudo chown -R `whoami` ~/.npm
-    - sudo chown -R `whoami` /usr/local/lib/node_modules
-    - sudo chown -R `whoami` /usr/local
 cache:
   directories:
     - node_modules
