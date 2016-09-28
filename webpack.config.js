@@ -7,6 +7,7 @@ module.exports = {
   ],
   externals:{
     jquery: 'jQuery',
+    jquery: 'jquery',
     'react/addons': true,
     'react/lib/ExecutionEnvironment': true,
     'react/lib/ReactContext': true
