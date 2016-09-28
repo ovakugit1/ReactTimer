@@ -6,7 +6,7 @@ module.exports = {
     './app/app.jsx'
   ],
   externals:{
-    jquery: './node_modules/jQuery',
+    jquery: 'jQuery',
     'react/addons': true,
     'react/lib/ExecutionEnvironment': true,
     'react/lib/ReactContext': true
