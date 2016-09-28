@@ -2,7 +2,7 @@
 language: node_js
 node_js:
     - "4.1.2"
-script: npm test
+script: sudo $(which npm) test
 before_install:
     - export DISPLAY=:99.0
     - sh -e /etc/init.d/xvfb start
