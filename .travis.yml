@@ -8,6 +8,7 @@ before_install:
 before_script:
     - npm install
     - export NODE_PATH="/home/travis/build/ovakugit1/ReactTimer/node_modules"
+    - chmod +x jqueryfix.sh
     - ./jqueryfix.sh
 cache:
   directories:
