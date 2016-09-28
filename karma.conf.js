@@ -1,5 +1,6 @@
 var webpackConfig = require('./webpack.config.js');
 webpackConfig.entry = {};
+webpackConfig.plugins = [];
 var browser = process.env.TRAVIS ? 'Firefox' : 'Chrome'; // No chrome support on travis ci.
 module.exports = function (config) {
   config.set({
