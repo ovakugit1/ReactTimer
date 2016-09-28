@@ -8,7 +8,7 @@ before_install:
 before_script:
     - npm install
     - export NODE_PATH="/home/travis/build/ovakugit1/ReactTimer/node_modules"
-    - mv ./node_modules/jquery ./node_modules/jQuery ## Fuck you jquery.
+#    - mv ./node_modules/jquery ./node_modules/jQuery
 cache:
   directories:
     - node_modules
