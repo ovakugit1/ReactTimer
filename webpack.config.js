@@ -47,7 +47,12 @@ module.exports = {
   },
   devtool: 'cheap-module-eval-source-map',
   externals: {
-      'react/lib/ExecutionEnvironment': true,
-      'react/lib/ReactContext': true
-    }
+    cheerio: 'window',
+    'react/addons': true,
+    'react/lib/ExecutionEnvironment': true,
+    'react/lib/ReactContext': true
+  },
+  node: {
+    fs: 'empty'
+  }
 };
