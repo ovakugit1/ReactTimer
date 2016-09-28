@@ -5,6 +5,9 @@ module.exports = {
     'script!foundation-sites/dist/foundation.min.js',
     './app/app.jsx'
   ],
+  resolveLoader: {
+    root: path.join(__dirname, 'node_modules')
+  },
   externals:{
     jquery: 'jQuery',
     'react/addons': true,
