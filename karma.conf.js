@@ -6,7 +6,7 @@ if(process.env.TRAVIS) {
   fs.exists('./node_modules/jquery', (exists) => {
     if(exists) {
       fs.exists('./node_modules/jQuery', (exists) => {
-        if (!exists) {
+        if (!exists) { // if the jQuery folder aldready exists, don't rename.
           console.log('jquery folder found. Renaming to jQuery');
           fs.rename('./node_modules/jquery', './node_modules/jQuery');
         }
