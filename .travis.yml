@@ -7,7 +7,7 @@ before_install:
     - sh -e /etc/init.d/xvfb start
 before_script:
     - npm install
-    - if [ ! -f ./node_modules/jquery ]; then	mv ./node_modules/jquery ./node_modules/jQuery; fi
+    #- if [ ! -f ./node_modules/jquery ]; then	mv ./node_modules/jquery ./node_modules/jQuery; fi
 cache:
   directories:
     - node_modules
