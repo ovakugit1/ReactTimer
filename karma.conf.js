@@ -5,12 +5,16 @@ if(process.env.TRAVIS) {
   // jquery fix
   fs.exists('./node_modules/jquery', (exists) => {
     if(exists) {
-      console.log('jquery folder found. Renaming to jQuery');
-      fs.rename('./node_modules/jquery', './node_modules/jQuery');
+      fs.exists('./node_modules/jQuery', (exists) => {
+        if (!exists) {
+          console.log('jquery folder found. Renaming to jQuery');
+          fs.rename('./node_modules/jquery', './node_modules/jQuery');
+        }
+      });
     }
   });
   // travis only supports firefox by default.
-  console.log('[Reach Timer] CI Run -> Switching browser option to Firefox');
+  console.log('[React Timer] CI Run -> Switching browser option to Firefox');
   browser = 'Firefox';
 }
 module.exports = function (config) {
