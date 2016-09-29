@@ -24,6 +24,7 @@ describe('Countdown', () => {
               done();
             }, 1001);
         });
+        
         it('should not go down below zero', (done) => {
           var countdown = TestUtils.renderIntoDocument(<Countdown />);
           countdown.handleSetCountdown(CD_TIMER_TEST_VALUE);
@@ -31,6 +32,28 @@ describe('Countdown', () => {
             expect(countdown.state.count).toBe(0);
             done();
           }, 3001);
+        });
+
+        it('should pause countdown when paused', (done) => {
+          var countdown = TestUtils.renderIntoDocument(<Countdown />);
+          countdown.handleSetCountdown(CD_TIMER_TEST_VALUE + 2);
+          countdown.handleStatusChange(CD_STATE_PAUSED);
+          setTimeout(() => {
+            expect(countdown.state.count).toBe(CD_TIMER_TEST_VALUE + 2);
+            expect(countdown.state.countdownStatus).toBe(CD_STATE_PAUSED);
+            done();
+          }, 1001);
+        });
+
+        it('should restore to start when stopped', (done) => {
+          var countdown = TestUtils.renderIntoDocument(<Countdown />);
+          countdown.handleSetCountdown(CD_TIMER_TEST_VALUE + 2);
+          countdown.handleStatusChange(CD_STATE_STOPPED);
+          setTimeout(() => {
+            expect(countdown.state.count).toBe(0);
+            expect(countdown.state.countdownStatus).toBe(CD_STATE_STOPPED);
+            done();
+          }, 1001);
         });
     });
 });
